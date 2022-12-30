@@ -41,7 +41,7 @@ Widget myDrawer(BuildContext context) {
             },
           ),
           ListTile(
-            title: const Text("Data Budget"),
+            title: const Text("My Watchlist"),
             onTap: () {
               // Route menu ke halaman form
               Navigator.push(
