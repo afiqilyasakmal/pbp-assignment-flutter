@@ -2,6 +2,8 @@ import 'dart:convert';
 import 'package:counter_7/model/watchlist_tugas9.dart';
 import 'package:http/http.dart' as http;
 
+// seharusnya link JSON di bawah diisi dengan
+// https://tugas2-pbp-afiq.herokuapp.com/mywatchlist/json
 Future<List<Watchlist>> fetchWatchList() async {
   var url =
       Uri.parse('http://localhost:8000/mywatchlist/json/');
