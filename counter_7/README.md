@@ -1,8 +1,10 @@
-## Perbedaan stateless widget dan stateful widget pada Flu tter
+# Tugas 7
+
+## Perbedaan stateless widget dan stateful widget pada Flutter
 Stateless widget adalah jenis widget di mana widget tersebut tidak akan berubah state nya sepanjang jalannya program. Widget jenis ini tidak bergantung pada event yang terjadi secar eksternal (tidak dipengaruhi widget lain); hanya bergantung pada constructor di dalamnya.
 Stateful widget adalah jenis widget di mana widget tersebut akan “berubah” state nya sepanjang jalannya program. Misalnya, apabila terdapat widget yang harus berubah secara dinamis karena di-trigger oleh event eksternal seperti misalnya mendapat request response HTTP atau karena diklik oleh suatu button. 
 ## Widget apa saja yang dipakai untuk tugas ini
-Di tugas ini widget yang digunakan adalah MaterialApp (parent widget), Scaffold dan AppBar (widget utama untuk membangun halaman), FloatingActionButton (untuk menampilkan UI button), Visibility (untuk menyembunyikan button apabila counter mencapai nilai nol), Column, Row, dan MaterialApp (untuk layouting), Text (untuk menampilakn teks ganjil atau genap), MyApp (merupakan root widget), MyHomePage (menjadi container untuk semua widget di bawahnya seperti Text dan Button), dan Icon (untuk menampilkan icon tambah dan kurang).
+Di tugas ini widget yang digunakan adalah MaterialApp (parent widget), Scaffold dan AppBar (widget utama untuk membangun halaman), FloatingActionButton (untuk menampilkan UI button), Visibility (untuk menyembunyikan button apabila counter mencapai nilai nol), Column, Row, dan MaterialApp (untuk layouting), Text (untuk menampilkan teks ganjil atau genap), MyApp (merupakan root widget), MyHomePage (menjadi container untuk semua widget di bawahnya seperti Text dan Button), dan Icon (untuk menampilkan icon tambah dan kurang).
 ## Fungsi dari setState()
 setState() bertugas untuk memberitahu widget bahwa ada object yang berubah pada State, sehingga akan melakukan build ulang pada Widget. Dalam hal ini object (atau variable) yang berubah adalah teks ganjil atau genap dan integer counter.
 ## Perbedaan antara const dengan final
@@ -12,3 +14,33 @@ setState() bertugas untuk memberitahu widget bahwa ada object yang berubah pada 
 1. Buat fungsi untuk melakukan decrement pada counter
 2. Buat fungsi yang mengembalikan widget Text di mana apabila counter genap akan mengembalikan teks GENAP berwarna biru dan akan mengembalikan teks GANJIL berwarna merah apabila counter ganjil. Kita buat setState() sehingga widget dapat di-rebuild ulang setiap adanya penambahan/pengurangan counter.
 3. Modifikasi widget Column di mana widget tersebut punya dua child, yaitu Text dan FloatingActionButton. Kita masukkan fungsi yang menampilkan teks ganjil/genap di widget Text dan pada FloatingActionButton kita buat widget Padding yang diisi oleh dua widget lagi yaitu Visibility (yang berisi widget FloatingActionButton decrement di mana widget Visibility diset sedemikian rupa sehingga apabila counter tidak sama dengan nol maka button decrement akan ditampilkan) dan FloatingActionButton untuk increment counter. 
+
+# Tugas 8
+
+##  Jelaskan perbedaan Navigator.push dan Navigator.pushReplacement.
+`Navigator.push` melakukan push ke halaman yang berada di bagian teratas dari stack halaman, sedangkan `Navigator.pushReplacement` melakukan push juga seperti `Navigator.push` tapi sembari melakukan pop juga terhadap route halaman sebelumnya setelah pergi ke halaman di atasnya.
+
+## Sebutkan widget apa saja yang kamu pakai di proyek kali ini dan jelaskan fungsinya.
+- Drawer: hamburger menu untuk berpindah-pindah halaman
+- Navigator: pergi ke halaman lain
+- Form: Container untuk formulir
+- Card: Semacam section untuk menampilkan data budget
+- TextFormField: Menerima input text dari user
+- TextButton: Sebagai text untuk button 
+- Padding, Container: Positional widget untuk memosisikan child widget
+- DropdownButtonFormField (dan turunannya): menampilkan dropdown field pilihan pemasukan/pengeluaran
+- Scaffold sebagai bagian terluar dari app
+
+## Sebutkan jenis-jenis event yang ada pada Flutter (contoh: onPressed).
+- onSaved
+- onHover
+- onTap
+- onChanged
+
+## Jelaskan bagaimana cara kerja Navigator dalam "mengganti" halaman dari aplikasi Flutter.
+Navigator bekerja seperti konsep stack, di mana terdapat `Navigator.push` untuk push ke halaman teratas (artinya halaman selanjutnya) dan `Navigator.pop` untuk kembali ke stack sebelumnya (melakukan operasi pop). Kita dapat membayangkan halaman widget sebagai tumpukan kartu yang ditumpuk sedemikian sehingga berurutan.
+
+## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
+- Membuat drawer.dart agar dapat digunakan di tiap widget halaman
+- Membuat widget form di form_tugas8.dart, menambahkan TextField dan DropdownButtonFormField untuk diisi user, implementasinya mengambil referensi dari lab.
+- Membuat widget halaman untuk menampilkan data yaitu data_tugas8.dart
